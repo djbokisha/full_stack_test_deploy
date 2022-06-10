@@ -8,7 +8,7 @@ function App() {
   const [colorHex, setColorHex] = useState("");
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/getColors").then((response) => {
+    Axios.get("https://testdepoly.herokuapp.com//getColors").then((response) => {
       setListOfColors(response.data);
     });
   }, []);
@@ -16,11 +16,11 @@ function App() {
   const createColor = (e) => {
     e.preventDefault();
     if(colorName.length > 0 && colorHex.length > 0) {
-      Axios.post("http://localhost:3001/createColor", {
+      Axios.post("https://testdepoly.herokuapp.com//createColor", {
         colorName,
         colorHex,
       }).then(() => {
-        Axios.get("http://localhost:3001/getColors").then((response) => {
+        Axios.get("https://testdepoly.herokuapp.com//getColors").then((response) => {
           setListOfColors(response.data);
           const inputs = document.querySelector('#colorForm').childNodes;
           inputs.forEach(input => {
@@ -32,7 +32,7 @@ function App() {
   };
 
   const deleteColor = (id) => {
-    Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+    Axios.delete(`https://testdepoly.herokuapp.com//delete/${id}`).then((response) => {
       setListOfColors(
         listofColors.filter((color) => {
           return color._id !== id;
