@@ -16,5 +16,8 @@ Navigate to frontend directory and run next commands:
 
 #PORT http://localhost:3000/
 
+
+# New version code - deployed on netlify and heroku 
+
 # Entering the real hex color will result in displaying text in provided color
 
